@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://cchqgud5dujfi"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_krvvb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsmh2"]
+bg_color = Color(0.959773, 0.890258, 0.779547, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.870588, 0.152941, 0.509804, 1)
+shadow_color = Color(0.299244, 0.011552, 0.157752, 1)
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_krvvb")
+
+[node name="NoMoreCards" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.5
+offset_top = -39.5
+offset_right = 236.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.872204, 0.152461, 0.511206, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_dsmh2")
+text = "Out of Cards!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.5
+offset_top = -120.0
+offset_right = 114.5
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 60
+text = "Reset"
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dokcqrnut5pb2"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_qkchf"]
+[ext_resource type="PackedScene" uid="uid://daanx72ktj3pt" path="res://deck.tscn" id="2_5y2f3"]
+[ext_resource type="PackedScene" uid="uid://t60eewvfnxtr" path="res://card.tscn" id="2_ubcx6"]
+[ext_resource type="PackedScene" uid="uid://cchqgud5dujfi" path="res://hud.tscn" id="4_rufvf"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_qkchf")
+card_scene = ExtResource("2_ubcx6")
+
+[node name="Deck" parent="." instance=ExtResource("2_5y2f3")]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 194.0
+offset_top = -118.0
+offset_right = 340.0
+offset_bottom = 119.0
+grow_vertical = 2
+
+[node name="HUD" parent="." instance=ExtResource("4_rufvf")]
+
+[connection signal="cards_depleted" from="Deck" to="." method="_on_deck_cards_depleted"]
+[connection signal="pressed" from="Deck" to="." method="_on_deck_pressed"]
+[connection signal="reset" from="HUD" to="." method="reset_deck"]

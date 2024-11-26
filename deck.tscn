@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://daanx72ktj3pt"]
+
+[ext_resource type="Script" path="res://deck.gd" id="1_ndtpr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rllua"]
+bg_color = Color(0.294118, 0.054902, 0.454902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 2
+
+[node name="Deck" type="Button"]
+offset_right = 146.0
+offset_bottom = 237.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rllua")
+text = "DECK"
+script = ExtResource("1_ndtpr")
